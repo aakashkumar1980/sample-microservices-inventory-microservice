@@ -12,7 +12,7 @@ import com.aakashkumar.microservices.controllers.dto.InventoryDto;
 import com.aakashkumar.microservices.controllers.utils.ModelMapperUtils;
 import com.aakashkumar.microservices.db.services.InventoryService;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/v1/inventory")
 public class InventoryController {
@@ -20,7 +20,6 @@ public class InventoryController {
 	@Autowired ModelMapperUtils modelMapperUtils;
 	@Autowired InventoryService inventoryService;
 
-	@CrossOrigin
 	@RequestMapping("/")
 	public List<InventoryDto> getInventory(@RequestParam List<Long> productIds) {
 		return modelMapperUtils.mapEntityToDto(inventoryService.getInventory(productIds), InventoryDto.class);
