@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: inventory-microservice
-        image: aakashkumar1980/inventory-microservice:1.0.0
+        image: aakashkumar1980/inventory-microservice
         ports:
           - containerPort: 8080
           # NOTE:
